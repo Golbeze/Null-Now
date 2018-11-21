@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+unsigned long long fibonacci(unsigned long long);
+int main(){
+	unsigned long long a,i;  //
+	cout << "this program calculats the fibonacci number,enter -1 to quit\n";
+	while(1){
+		cout << "enter the number:"; 
+		cin >> a;
+		if (a == -1){      // use -1 as sentinel to break,bad but run-able,need to improve,but not now.
+			break;
+		}else{
+			i = fibonacci(a);
+			cout << "the fibonacci number is " << i <<endl;		}
+	}
+	return 0;
+}
+	unsigned long long fibonacci(unsigned long long n){
+		return n >= 3 ? fibonacci(n-1) + fibonacci(n-2) : n-1;  //recursive here.
+	}
