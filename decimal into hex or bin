@@ -1,0 +1,57 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+int main(){
+	int a,b;
+	stack<int> s;
+	cout<< "this programs calculates a binary or hexadecimal\n";
+	cout << "enter the decimal number you want to turn into:";
+	cin >> a>>b;
+switch(b){
+	   case 16 :
+	while (a != 0 ){
+		b = a % 16;
+		a = a / 16;
+		s.push(b);
+	}
+	cout << "a(10) = ";
+	while(!s.empty()){
+		switch(s.top()){
+			case 10 :
+				cout << "A";
+				break;
+			case 11 :
+				cout << "B";
+				break;
+			case 12 :
+				cout << "C";
+				break;
+			case 13 :
+				cout << "D";
+				break;
+			case 14 :
+				cout << "E";
+				break;
+			case 15 :
+				cout << "F";
+				break;
+			default:
+				cout << s.top();
+		}
+		s.pop();
+	}
+	case 2 :
+	while (a != 0){
+		b = a % 2;
+		a = a / 2;
+		s.push(b);
+	}
+	cout << "this decimal number's binary is "; 
+	while (!s.empty()){
+	cout << s.top();
+	s.pop();
+	}
+	cout << endl;
+}
+ return 0;
+}
