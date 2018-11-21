@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int Fibon(int);
+int main(){
+	int j;
+	cin >> j;
+	cout << Fibon(j);
+	return 0;
+}
+int Fibon(int n){
+	vector<int> b;
+	b.push_back(0);
+	b.push_back(1);
+	b.push_back(1);
+	int l =3;
+	int k;
+	if(l < n ){
+		while(l<n){
+			k = b[l-1]+b[l-2];
+			b.push_back(k);
+			l++;}
+		return k;
+	}else{
+		return b[n-1];
+	}
+}
+	
+ 
